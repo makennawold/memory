@@ -66,6 +66,7 @@
   color: white;
   font-size: 2rem;
   transition: color 0.3s ease;
+  transition: filter 0.3s ease;
 }
 
 .crown.active {

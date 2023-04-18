@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 
 const Card = ({ card, cardsTheme, setSelectedCards, selectedCards }) => {
   const [cardUp, setCardUp] = useState(false);
+  const [clickEnabled, setClickEnabled] = useState(false);
 
   const handleClick = () => {
-    if (selectedCards.length < 2) {
+    if (clickEnabled) {
       setSelectedCards([...selectedCards, card]);
       setCardUp(true);
     }
@@ -13,9 +14,11 @@ const Card = ({ card, cardsTheme, setSelectedCards, selectedCards }) => {
 
   useEffect(() => {
     if (selectedCards.length == 0) {
-      setTimeout(() => {
-        setCardUp(false);
-      }, 1000);
+      setCardUp(false);
+      setClickEnabled(true);
+    }
+    if (selectedCards.length == 2) {
+      setClickEnabled(false);
     }
   }, [selectedCards]);
   return (
