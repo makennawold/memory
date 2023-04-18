@@ -47,6 +47,12 @@
 .player {
   font-family: "Merriweather";
   color: white;
+  transition: color 0.3s ease;
+}
+
+.player.active {
+  color: gold;
+  /* text-decoration: underline; */
 }
 
 .points-container {
@@ -59,6 +65,12 @@
 .crown {
   color: white;
   font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.crown.active {
+  color: gold;
+  filter: drop-shadow(0px 0px 10px gold);
 }
 
 .points {
@@ -89,5 +101,11 @@
   width: 125px;
   height: 150px;
   object-fit: cover;
+  border-radius: 5px;
+}
+
+.matched {
+  width: 125px;
+  height: 150px;
   border-radius: 5px;
 }
