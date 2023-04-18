@@ -1,6 +1,8 @@
 import "./styles/App.css";
 import { useEffect, useState } from "react";
 
+import { TbCrown } from "react-icons/tb";
+
 import Card from "./components/Card";
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
 
   const [cardsTheme, setCardsTheme] = useState("tangled");
   const [cards, setCards] = useState([]);
+  const [player1Points, setPlayer1Points] = useState(0);
+  const [player2Points, setPlayer2Points] = useState(0);
 
   const shuffleCards = () => {
     let shuffledCards = [...tangledArray, ...tangledArray]
@@ -49,11 +53,31 @@ function App() {
   return (
     <div className="app">
       <div className="header">
-        <div>player 1</div>
-        <div>Memory</div>
-        <div>player 2</div>
+        <div className="player-container">
+          <div className="player">player 1 </div>
+          <div className="points-container">
+            <div className="crown">
+              <TbCrown />
+            </div>
+            <div className="points">{player1Points}</div>
+          </div>
+        </div>
+        <div className="title">
+          M<span className="title-medium">E</span>
+          <span className="title-small">MO</span>
+          <span className="title-medium">R</span>Y
+        </div>
+        <div className="player-container">
+          <div className="player">player 2 </div>
+          <div className="points-container">
+            <div className="crown">
+              <TbCrown />
+            </div>
+            <div className="points">{player2Points}</div>
+          </div>
+        </div>
       </div>
-      <div className="card-container">{cards.map((card) => {})}</div>
+      <div className="card-container">{cards.map((card) => {})}hi</div>
     </div>
   );
 }

@@ -1,14 +1,7 @@
 import React from "react";
 
-function Card(image) {
-  return (
-    <div>
-      <img
-        src={image}
-        styles={{ backgroundColor: "purple", height: "300px", width: "400px" }}
-      />
-    </div>
-  );
+function Card() {
+  return <div className="card"></div>;
 }
 
 export default Card;
