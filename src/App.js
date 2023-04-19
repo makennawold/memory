@@ -98,7 +98,7 @@ function App() {
     if (selectedCards.length == 2) {
       setTimeout(() => {
         checkMatch();
-      }, 1000);
+      }, 2000);
     }
   }, [selectedCards]);
 
