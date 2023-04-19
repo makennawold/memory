@@ -17,6 +17,15 @@ import tangled9 from "./images/tangled_images/tangled_9.jpeg";
 import tangled10 from "./images/tangled_images/tangled_10.jpeg";
 import tangled11 from "./images/tangled_images/tangled_11.jpeg";
 import tangled12 from "./images/tangled_images/tangled_12.jpeg";
+import tangled13 from "./images/tangled_images/tangled_13.jpeg";
+import tangled14 from "./images/tangled_images/tangled_14.png";
+import tangled15 from "./images/tangled_images/tangled_15.jpeg";
+import tangled16 from "./images/tangled_images/tangled_16.jpeg";
+// import tangled17 from "./images/tangled_images/tangled_17.jpeg";
+import tangled18 from "./images/tangled_images/tangled_18.jpeg";
+import tangled19 from "./images/tangled_images/tangled_19.jpeg";
+import tangled20 from "./images/tangled_images/tangled_20.jpeg";
+import tangled21 from "./images/tangled_images/tangled_21.jpeg";
 
 import tangled from "./images/card-backs/tangled.jpeg";
 
@@ -34,6 +43,15 @@ function App() {
     { num: 10, img: tangled10, isMatched: false },
     { num: 11, img: tangled11, isMatched: false },
     { num: 12, img: tangled12, isMatched: false },
+    { num: 13, img: tangled13, isMatched: false },
+    { num: 14, img: tangled14, isMatched: false },
+    { num: 15, img: tangled15, isMatched: false },
+    { num: 16, img: tangled16, isMatched: false },
+    // { num: 17, img: tangled17, isMatched: false },
+    { num: 18, img: tangled18, isMatched: false },
+    { num: 19, img: tangled19, isMatched: false },
+    { num: 20, img: tangled20, isMatched: false },
+    { num: 21, img: tangled21, isMatched: false },
   ];
   let crittersArray = [
     { num: 1, img: "images/critters_images/critters_1.jpeg" },
@@ -94,6 +112,7 @@ function App() {
         return card;
       });
       addPoint();
+
       setCards(updatedCards);
     } else {
       console.log("sadness");
@@ -133,7 +152,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="card-container">
+      <div className="cards-container">
         <div className="cards">
           {cards.map((card) => (
             <Card

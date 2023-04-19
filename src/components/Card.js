@@ -7,8 +7,8 @@ const Card = ({ card, cardsTheme, setSelectedCards, selectedCards }) => {
 
   const handleClick = () => {
     if (clickEnabled) {
-      setSelectedCards([...selectedCards, card]);
       setCardUp(true);
+      setSelectedCards([...selectedCards, card]);
     }
   };
 
@@ -22,16 +22,30 @@ const Card = ({ card, cardsTheme, setSelectedCards, selectedCards }) => {
     }
   }, [selectedCards]);
   return (
-    <div className="card" onClick={handleClick}>
+    // <div className="card" onClick={handleClick}>
+    //   {card.isMatched ? (
+    //     <div className="matched"></div>
+    //   ) : cardUp ? (
+    //     <div className="front">
+    //       <img src={card.img} />
+    //     </div>
+    //   ) : (
+    //     <div className="back">
+    //       <img src={cardsTheme} />
+    //     </div>
+    //   )}
+    // </div>
+    <div className="card-container" onClick={handleClick}>
       {card.isMatched ? (
         <div className="matched"></div>
-      ) : cardUp ? (
-        <div className="front">
-          <img src={card.img} />
-        </div>
       ) : (
-        <div className="back">
-          <img src={cardsTheme} />
+        <div className={`card ${cardUp ? "faceup" : ""}`}>
+          <div className="front">
+            <img src={card.img} />
+          </div>
+          <div className="back">
+            <img src={cardsTheme} />
+          </div>
         </div>
       )}
     </div>
