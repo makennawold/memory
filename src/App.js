@@ -86,6 +86,7 @@ function App() {
     if (activePlayer === true) {
       setPlayer1Points(player1Points + 1);
       setMatchMade(true);
+
       setTimeout(() => {
         setMatchMade(false);
       }, 2000);
@@ -103,7 +104,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(selectedCards);
+    // console.log(selectedCards);
     if (selectedCards.length == 2) {
       setTimeout(() => {
         checkMatch();
@@ -113,15 +114,16 @@ function App() {
 
   const checkMatch = () => {
     if (selectedCards[0].num === selectedCards[1].num) {
-      console.log("its a match");
+      console.log(selectedCards[0].num, "num at check");
+      // setSelectedCards([...selectedCards, card]
       let updatedCards = cards.map((card) => {
         if (card.num === selectedCards[0].num) {
           return { ...card, isMatched: true };
         }
         return card;
       });
-
       addPoint();
+
       setCards(updatedCards);
     } else {
       console.log("sadness");
