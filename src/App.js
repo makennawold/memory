@@ -72,6 +72,7 @@ function App() {
   const [player2Points, setPlayer2Points] = useState(0);
   const [selectedCards, setSelectedCards] = useState([]);
   const [activePlayer, setActivePlayer] = useState(true);
+  const [matchMade, setMatchMade] = useState(false);
 
   const shuffleCards = () => {
     let shuffledCards = [...tangledArray, ...tangledArray]
@@ -84,8 +85,16 @@ function App() {
   const addPoint = () => {
     if (activePlayer === true) {
       setPlayer1Points(player1Points + 1);
+      setMatchMade(true);
+      setTimeout(() => {
+        setMatchMade(false);
+      }, 2000);
     } else {
       setPlayer2Points(player2Points + 1);
+      setMatchMade(true);
+      setTimeout(() => {
+        setMatchMade(false);
+      }, 2000);
     }
   };
 
@@ -111,8 +120,8 @@ function App() {
         }
         return card;
       });
-      addPoint();
 
+      addPoint();
       setCards(updatedCards);
     } else {
       console.log("sadness");
@@ -130,7 +139,7 @@ function App() {
           </div>
           <div className="points-container">
             <div className={activePlayer ? "crown active" : "crown"}>
-              <TbCrown />
+              <TbCrown className={activePlayer && matchMade ? "spin" : ""} />
             </div>
             <div className="points">{player1Points}</div>
           </div>
@@ -146,7 +155,7 @@ function App() {
           </div>
           <div className="points-container">
             <div className={activePlayer ? "crown" : "crown active"}>
-              <TbCrown />
+              <TbCrown className={!activePlayer && matchMade ? "spin" : ""} />
             </div>
             <div className="points">{player2Points}</div>
           </div>

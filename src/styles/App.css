@@ -52,6 +52,7 @@
 
 .player.active {
   color: gold;
+  animation: wiggle 1000ms;
   /* text-decoration: underline; */
 }
 
@@ -64,7 +65,7 @@
 
 .crown {
   color: white;
-  font-size: 2rem;
+  font-size: 32px;
   transition: color 0.3s ease;
   transition: filter 0.3s ease;
 }
@@ -72,14 +73,10 @@
 .crown.active {
   color: gold;
   filter: drop-shadow(0px 0px 10px gold);
-  -webkit-animation-name: wiggle;
-  -ms-animation-name: wiggle;
-  -ms-animation-duration: 1000ms;
-  -webkit-animation-duration: 1000ms;
-  -webkit-animation-iteration-count: 1;
-  -ms-animation-iteration-count: 1;
-  -webkit-animation-timing-function: ease-in-out;
-  -ms-animation-timing-function: ease-in-out;
+}
+
+.spin {
+  animation: spin 1000ms;
 }
 
 .points {
@@ -142,6 +139,7 @@
   /* transition-delay: 0.8s; */
   transition: opacity 1s;
   opacity: 0;
+  backface-visibility: hidden;
 }
 
 .matched {
